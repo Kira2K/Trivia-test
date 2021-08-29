@@ -11,7 +11,7 @@ Due to no annotation provided and some issues with Figma designs, i had to solve
 The provided API have a lot of different issues. I have implemented some decisions, to make it work.
 
 4. Questions amount. There is no additional annotations about hadling situations, when user would like to choose 0 or 51+ questions to play.
-   ⋅⋅*. In case, if user provides 0 or amount of questions is not defined, i decided to just redirect to Home page
-   ⋅⋅*. In case, if user provides 51+ questions amount and API responses with only 50 questions, my application works with 50 questions.
+   * In case, if user provides 0 or amount of questions is not defined, i decided to just redirect to Home page
+   * In case, if user provides 51+ questions amount and API responses with only 50 questions, my application works with 50 questions.
 5. Hadling API errors. Due to no annotation provided, i use only (console.error(error)) and redirect to Home page, without any other error handlings
 6. API questions' texts errors (Screenshot #4). I haven't fixed them, because i don't have any special information about stylisation. I know, how to do it and will, in case of receiving stylisation's annotations
