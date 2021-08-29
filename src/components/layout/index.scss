@@ -1,0 +1,46 @@
+@mixin Breakpoint970 {
+  @media (max-width: 970px) {
+    @content;
+  }
+}
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &_dark {
+    background-color: rgba(71, 81, 192, 1);
+  }
+
+  &_light {
+    background-color: #e5e5e5;
+  }
+  &__center-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+    z-index: 2;
+    max-width: 620px;
+  }
+
+  &__close-button-container {
+    position: absolute;
+    top: 10vh;
+    right: 25vh;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 4;
+    @include Breakpoint970 {
+      top: 40px;
+      right: 30px;
+    }
+  }
+
+  &__close-button-icon {
+    width: 15px;
+    height: 15px;
+  }
+}

@@ -1,0 +1,40 @@
+@mixin Breakpoint480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+.question {
+  width: calc(100% - 30px);
+  height: 7vh;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 10px;
+  z-index: 2;
+  overflow: hidden;
+  @include Breakpoint480 {
+    height: 100%;
+  }
+  &_correct {
+    background-color: rgba(255, 251, 250, 1);
+  }
+  &_incorrect {
+    background-color: rgba(255, 219, 219, 1);
+  }
+  &__sign {
+    height: 12px;
+    width: 12px;
+  }
+  &__text {
+    color: rgba(70, 79, 172, 1);
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: left;
+    width: calc(100% - 40px);
+    padding: 15px 0;
+  }
+}

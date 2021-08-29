@@ -1,0 +1,170 @@
+@mixin Breakpoint750 {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
+
+.process {
+  font-family: Quicksand;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__category {
+    color: rgba(73, 83, 190, 1);
+    font-family: Quicksand;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 500;
+    z-index: 2;
+    overflow: hidden;
+    @include Breakpoint750 {
+      font-size: 40px;
+      padding: 0 30px;
+    }
+  }
+
+  &__level {
+    user-select: none;
+    margin-top: 2.5vh;
+    color: rgba(73, 83, 190, 1);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.5em;
+    text-align: center;
+  }
+
+  &__progress {
+    margin-top: 3.5vh;
+  }
+
+  &__question-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__question-content {
+    color: rgba(73, 83, 190, 1);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px;
+    text-align: center;
+    padding: 5vh 20px 7vh 20px;
+  }
+  &__buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 26vw;
+    min-width: 320px;
+    margin: auto;
+    height: 19.5vh;
+  }
+  &__buttons-spacer {
+    height: 9vh;
+  }
+}
+.progress {
+  width: 28vw;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+  &__score-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  &__score-done {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff7878;
+  }
+  &__score-all {
+    margin-top: 6px;
+    color: rgba(73, 83, 190, 1);
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+
+    color: rgba(73, 83, 190, 1);
+  }
+
+  &__bar-wrapper {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+  }
+  &__whole-bar {
+    width: 100%;
+    height: 4px;
+    border: none;
+    border-radius: 20px;
+    background-color: #dbdeff;
+  }
+  &__done-bar {
+    position: absolute;
+    height: 4px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #ff7878 0%, #ff7878 100%);
+  }
+}
+
+.decor-process {
+  position: fixed;
+  z-index: 1;
+  &_pc-top-left {
+    left: -40px;
+    top: -150px;
+    height: 60%;
+    @include Breakpoint750 {
+      left: -100px;
+      top: -180px;
+    }
+  }
+  &_pc-bottom-left {
+    left: -30px;
+    bottom: -20px;
+    height: 40%;
+    @include Breakpoint750 {
+      left: -80px;
+      bottom: -90px;
+    }
+  }
+  &_pc-top-right {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    // FIXME: Smth is wrong with imported file
+    display: none;
+  }
+
+  &_pc-bottom-right {
+    bottom: -20px;
+    right: -20px;
+    height: 30%;
+    @include Breakpoint750 {
+      right: -60px;
+      bottom: -90px;
+    }
+  }
+  &_mobile-middle-right {
+    display: none;
+    top: 20%;
+    right: 0px;
+    @include Breakpoint750 {
+      display: block;
+    }
+  }
+}

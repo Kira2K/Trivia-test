@@ -1,0 +1,206 @@
+@mixin Breakpoint750 {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
+@mixin Breakpoint480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+.start {
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -18%;
+    @include Breakpoint480 {
+      margin-top: -23%;
+    }
+  }
+
+  &__input {
+    padding-left: 15px;
+    padding-bottom: 4px;
+    background-color: rgba(71, 81, 192, 1);
+    color: white;
+    margin-top: 6px;
+    width: 100%;
+    height: 6.5vh;
+    border-radius: 8px;
+    border: 1px solid white;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+  }
+  &__button-wrapper {
+    overflow: hidden;
+    background-color: rgba(71, 81, 192, 1);
+    z-index: 2;
+    border-radius: 14px;
+    width: 100%;
+    margin-top: 9vh;
+    height: 8vh;
+    @include Breakpoint480 {
+      position: fixed;
+      bottom: 40px;
+      width: 320px;
+      margin: auto auto;
+    }
+  }
+}
+
+.param {
+  width: 26vw;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-input {
+  background-color: rgba(71, 81, 192, 1);
+  color: white;
+  margin-top: 6px;
+  width: 100%;
+  height: 6.5vh;
+  border-radius: 8px;
+  border: 1px solid white;
+  font-family: Quicksand;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  user-select: none;
+  background-image: url(../../static/Select.svg);
+  background-repeat: no-repeat, repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+  cursor: pointer;
+  position: relative;
+
+  &__options-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 130%;
+    left: -1px;
+    z-index: 3;
+    overflow: hidden;
+    height: calc(13vh+1px);
+    width: 90%;
+    background-color: rgba(71, 81, 192, 1);
+    color: white;
+    border-radius: 8px;
+    border: 1px solid white;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    user-select: none;
+
+    cursor: pointer;
+  }
+  &__option {
+    height: 6.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  &__option_first {
+    border-bottom: 1px solid white;
+  }
+  &__option-text {
+    padding-left: 1em;
+    padding-bottom: 6px;
+  }
+}
+
+.label {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  &_bottom {
+    margin-top: 23px;
+  }
+  &__img {
+    height: 3.5vh;
+  }
+  &__text {
+    font-size: 14px;
+    color: rgba(247, 164, 145, 1);
+    margin: 5px 0px 5px 10px;
+    font-weight: 700;
+  }
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @include Breakpoint480 {
+    margin-top: -110px;
+  }
+  &__text {
+    color: white;
+    font-family: Quicksand;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__img {
+    margin-top: -110px;
+    min-width: 320px;
+    width: 75%;
+    @include Breakpoint750 {
+      width: 85%;
+    }
+    @include Breakpoint480 {
+      width: 100%;
+      margin-top: -135px;
+    }
+  }
+}
+.decor-start {
+  position: fixed;
+  &_pc-top-left {
+    left: -40px;
+    top: -10px;
+    height: 60%;
+    @include Breakpoint750 {
+      left: -85px;
+      bottom: -20px;
+    }
+  }
+  &_pc-bottom-left {
+    left: -50px;
+    bottom: -30px;
+    height: 30%;
+    @include Breakpoint750 {
+      left: -80px;
+      bottom: -90px;
+    }
+  }
+  &_pc-top-right {
+    top: 20px;
+    right: 100px;
+    // FIXME: Smth is wrong with imported file
+    display: none;
+  }
+
+  &_pc-bottom-right {
+    bottom: 0px;
+    right: 0px;
+    height: 50%;
+    @include Breakpoint750 {
+      right: -40px;
+      bottom: -80px;
+    }
+  }
+}

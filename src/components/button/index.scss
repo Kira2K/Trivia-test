@@ -1,0 +1,34 @@
+.button {
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  border: 1px solid;
+  z-index: 2;
+  overflow: hidden;
+  &_blue {
+    background-color: rgba(71, 81, 192, 1);
+    border-color: rgba(71, 81, 192, 1);
+    color: white;
+  }
+
+  &_white {
+    background-color: white;
+    border-color: rgba(71, 81, 192, 1);
+    color: rgba(71, 81, 192, 1);
+  }
+
+  &_orange {
+    background: linear-gradient(90deg, #ffa67a 0%, #ff6065 100%);
+    color: white;
+    border-color: transparent;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}

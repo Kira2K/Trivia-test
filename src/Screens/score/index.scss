@@ -1,0 +1,127 @@
+@mixin Breakpoint750 {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
+
+.score {
+  overflow: hidden;
+  &__header {
+    margin-top: 60px;
+  }
+
+  &__stars-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  &__star {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  &__questions-container {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__button-container {
+    overflow: hidden;
+    background-color: rgba(71, 81, 192, 1);
+    z-index: 2;
+    border-radius: 14px;
+    width: 320px;
+    margin: 5vh auto 0 auto;
+    height: 8vh;
+    margin-bottom: 60px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    max-width: 40px;
+    max-height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  &__result {
+    padding-left: 10px;
+  }
+  &__text {
+    user-select: none;
+    color: white;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  &__correctNumber {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: #ff7878;
+  }
+}
+
+.decor-score {
+  position: fixed;
+  z-index: 1;
+  &_pc-top-left {
+    left: -30px;
+    top: 40px;
+    height: 50%;
+    @include Breakpoint750 {
+      left: 0px;
+      top: 300px;
+      height: 50%;
+    }
+  }
+
+  &_pc-top-right {
+    top: 20px;
+    right: 100px;
+    // FIXME: Smth is wrong with imported file
+    display: none;
+  }
+
+  &_pc-bottom-right {
+    bottom: 0px;
+    right: 0px;
+    height: 50%;
+    @include Breakpoint750 {
+      height: 60%;
+      bottom: 150px;
+    }
+  }
+
+  &_mobile-top-right {
+    display: none;
+    top: -320px;
+    right: 0px;
+    height: 100%;
+    @include Breakpoint750 {
+      display: block;
+    }
+  }
+  &_mobile-bottom-right {
+    display: none;
+    bottom: -350px;
+    right: 0px;
+    height: 100%;
+    @include Breakpoint750 {
+      display: block;
+    }
+  }
+}
