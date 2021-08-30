@@ -13,7 +13,6 @@ export const ResolvedQuestion = ({
   const questionInCorrect = (): JSX.Element => (
     <QuestionIncorrect className="question__sign" />
   );
-  // TODO: write about problems with API
   const Sign = isCorrect ? questionCorrect() : questionInCorrect();
   return (
     <div

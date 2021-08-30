@@ -91,7 +91,6 @@ function Start(): JSX.Element {
             className="start__input param__number"
             onChange={(e) => {
               let number = Number(e.target.value);
-              // TODO: write about API
               dispatch(setQuestionsAmount(number < 51 ? number : 50));
             }}
           />

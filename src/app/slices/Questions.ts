@@ -23,7 +23,6 @@ export const fetchQuestions = createAsyncThunk(
       `https://opentdb.com/api.php?amount=${questionsAmount}&${difficulty}=easy&type=boolean`
     );
 
-    // TODO: Navigation to Start Screen if params == null
     if (response == null) {
       window.location.replace(RouteTypes.home);
       console.error(response);
@@ -38,13 +37,11 @@ export const fetchQuestions = createAsyncThunk(
   }
 );
 
-// Define a type for the slice state
 interface QuestionsState {
   questionsArr: Question[];
   currentQuestionNumber: number;
 }
 
-// Define the initial state using that type
 const initialState: QuestionsState = {
   questionsArr: getFromLocaleStorage(LocalStorageTypes.questionsArr) ?? [],
   currentQuestionNumber:
@@ -53,10 +50,8 @@ const initialState: QuestionsState = {
 
 export const questionsSlice = createSlice({
   name: "questions",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    // Use the PayloadAction type to declare the contents of `action.payload`
     setCurrentQuestionNumber: (state, action: PayloadAction<number>) => {
       state.currentQuestionNumber = action.payload;
     },
